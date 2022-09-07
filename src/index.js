@@ -20,6 +20,12 @@ function onInput(e) {
   e.preventDefault();
   countryInfo.innerHTML = '';
   countryList.innerHTML = '';
+
+  const inputValue = e.target.value.trim();
+  if (!inputValue) {
+    return;
+  }
+
   fetchCountries(e)
     .then(country => {
       if (country.length === 1) {
